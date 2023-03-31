@@ -4,7 +4,6 @@ import jakarta.servlet.http.*;
 
 import java.io.IOException;
 
-
 public class HelloServlet extends HttpServlet {
 
     @Override
