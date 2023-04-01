@@ -1,11 +1,10 @@
 package hello.config;
 
-import memory.MemoryController;
-import memory.MemoryFinder;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import memory.*;
+import org.springframework.context.annotation.*;
 
 @Configuration
+@Conditional(MemoryCondition.class)
 public class MemoryConfig {
 
     @Bean
