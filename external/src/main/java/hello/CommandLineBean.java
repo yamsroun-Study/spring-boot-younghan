@@ -1,5 +1,6 @@
 package hello;
 
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
@@ -15,7 +16,7 @@ public class CommandLineBean {
 
     private final ApplicationArguments arguments;
 
-    //@PostConstruct
+    @PostConstruct
     public void init() {
         log.info(">>> source = {}", List.of(arguments.getSourceArgs()));
         log.info(">>> optionNames = {}", List.of(arguments.getOptionNames()));
