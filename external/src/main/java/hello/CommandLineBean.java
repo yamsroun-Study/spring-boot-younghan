@@ -1,10 +1,8 @@
 package hello;
 
-import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.DefaultApplicationArguments;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -17,12 +15,12 @@ public class CommandLineBean {
 
     private final ApplicationArguments arguments;
 
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         log.info(">>> source = {}", List.of(arguments.getSourceArgs()));
         log.info(">>> optionNames = {}", List.of(arguments.getOptionNames()));
         Set<String> optionNames = arguments.getOptionNames();
-        for (String optionName : optionNames) {
+        for (String optionName: optionNames) {
             log.info(">>> option args {}={}", optionName, arguments.getOptionValues(optionName));
         }
     }
